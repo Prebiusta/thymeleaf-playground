@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Person</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <form th:object="${person}"></form>
+    <form action="#" th:action="@{/person/create}" th:object="${person}" method="post">
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input th:field="*{firstName}" type="text" class="form-control" id="firstName" aria-describedby="personHelp" placeholder="Enter First Name">
+            <small id="personHelp" class="form-text text-muted">First Name of new Person</small>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input th:field="*{lastName}" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+        </div>
+
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+        <button class="btn btn-outline-danger" type="reset">Reset</button>
+    </form>
+</div>
+</body>
+</html>

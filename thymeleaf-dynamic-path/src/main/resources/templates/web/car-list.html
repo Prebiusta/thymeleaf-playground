@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="card m-5 shadow-sm">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Engine Volume</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">
+                        <a th:href="@{/person/${person.id}/car}">
+                            <i class="fas fa-plus-square fa-lg"></i>
+
+                        </a>
+                    </th>
+                </tr>
+                </thead>
+                <tr scope="row" th:each="car : ${cars}">
+                    <td th:text="${car.id}"></td>
+                    <td th:text="${car.name}"></td>
+                    <td th:text="${car.engineVolume}"></td>
+                    <td th:text="${car.price}"></td>
+                    <td class="text-dark">Edit</td>
+                </tr>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
