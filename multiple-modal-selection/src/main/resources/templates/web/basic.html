@@ -5,12 +5,14 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <body style="margin : 0px; overflow: hidden;">
 <a-scene embedded arjs>
-    <a-marker preset="hiro">
+    <a-marker-camera type='pattern' url='/pattern-pig.patt'>
         <a-entity
                 position="0 0 0"
                 scale="0.05 0.05 0.05"
                 gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githubusercontent.com/Prebiusta/thymeleaf-playground/main/multiple-modal-selection/src/main/resources/scene.gltf"
         ></a-entity>
+    </a-marker-camera>
+
     </a-marker>
     <a-entity camera></a-entity>
 </a-scene>
